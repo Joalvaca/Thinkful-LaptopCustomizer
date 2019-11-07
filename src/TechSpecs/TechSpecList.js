@@ -2,27 +2,30 @@ import React from "react"
 
 import TechSpecChoices from './TechSpecChoices';
 
-export default function TechSpecs(props) {
-  const features = Object.keys(props.features).map(key => {
+function TechSpecList(props) {
+  const options = props.features[props.tracker].map((item, index) => {
+    const selectedClass =
+      item.name === props.selected[props.tracker].name
+        ? 'feature__selected'
+        : '';
+    const featureClass = 'feature__option ' + selectedClass;
     return (
-      <div className='feature' key={key}>
-        <div className='feature__name'>{key}</div>
-        <TechSpecList
-          selected={props.selected}
-          features={props.features}
-          key={key}
-          tracker={key}
-          updateFeature={props.updateFeature}
-        />
-      </div>
+      <TechSpecChoices
+        key={index}
+        id={index}
+        tracker={props.tracker}
+        addClass={featureClass}
+        updateFeature={props.updateFeature}
+        item={item}
+      />
     );
   });
 
   return (
-    <section className='main__form'>
-      <h3>TECH SPECS AND CUSTOMIZATIONS</h3>
-      {features}
-    </section>
+    <div className='feature' key={props.key}>
+      <div className='feature__name'>{props.key}</div>
+      <ul className='feature__list'>{options}</ul>
+    </div>
   );
 }
 export default TechSpecList 
