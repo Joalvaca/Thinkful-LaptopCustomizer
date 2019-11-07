@@ -24,5 +24,3 @@ export default function TechSpecs(props) {
     </section>
   );
 }
-
-export default TechSpecs
