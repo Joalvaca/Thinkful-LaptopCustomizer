@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function TechSpecChoice(props) {
+export default function TechSpechChoice(props) {
   return (
     <li key={props.id} className='feature__item'>
       <div
