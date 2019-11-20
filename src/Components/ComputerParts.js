@@ -3,7 +3,7 @@ import slugify from 'slugify';
 
 
 
-class Parts extends Component {
+class ComputerParts extends Component {
   
   render(props) {
     
@@ -33,4 +33,4 @@ class Parts extends Component {
     )
   }
 }
-export default Parts;
+export default ComputerParts;

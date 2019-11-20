@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import CartItems from './Components/CartItems'
+import Carting from './Carting'
 
 
-class Cart extends Component {
+class AddCart extends Component {
 
   render() {
     const total = Object.keys(this.props.selected).reduce(
@@ -17,7 +17,7 @@ class Cart extends Component {
         const featureHash = feature + '-' + idx;
         const selectedOption = this.props.selected[feature];
         return (
-          <CartItems
+          <Carting
             key={featureHash}
             selected={selectedOption}
             currency={this.props.currency}
@@ -36,4 +36,4 @@ class Cart extends Component {
   }
 }
 
-export default Cart;
+export default AddCart

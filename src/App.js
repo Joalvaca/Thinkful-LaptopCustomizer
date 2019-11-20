@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Customize from './Components/Customize';
-import Cart from './Components/Cart';
+import FinalOrder from './Components/FinalOrder';
+import Carting from './Components/Carting';
 
 import slugify from 'slugify';
 import './App.css';
+import AddCart from './Components/AddCart';
 
 
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
@@ -50,13 +51,13 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
       </header>
       <main>
-        <Customize 
+        <FinalOrder 
                     selected={this.state.selected} 
                     currency={USCurrencyFormat}  
                     features={this.props.features} 
                     select={this.updateFeature}
         />
-        <Cart
+        <AddCart
                     selected={this.state.selected}
                     currency={USCurrencyFormat}
         />

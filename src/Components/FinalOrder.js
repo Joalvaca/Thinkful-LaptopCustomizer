@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import Part from './Part'
+import Carting from './Carting'
+import ComputerParts from './ComputerParts';
 
-class Customize extends Component {
+class FinalOrder extends Component {
   
   render(props) {
     return (
       <div className="App">
         <h2>Customize Your Laptop</h2>
         {Object.keys(this.props.features).map((feature, index) => 
-        <Part featureHash={feature + '-' + index} 
+        <ComputerParts featureHash={feature + '-' + index} 
               selected={this.props.selected} 
               currency={this.props.currency} key={index} 
               featureName={feature} 
@@ -19,4 +20,4 @@ class Customize extends Component {
   }
 }
 
-export default Customize;
+export default FinalOrder
